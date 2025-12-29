@@ -1,17 +1,18 @@
-# im-sorry-love
-im sorry love
+# please-forgive-me-baby
+Im-sorry-Mamma
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For Momo</title>
+  <title>For Momo 🤍</title>
+
   <style>
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
       height: 100vh;
-      background: radial-gradient(circle at top, #fdeff2, #cfd9ff);
+      background: linear-gradient(135deg, #ffe6f0, #e6ecff);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,32 +20,28 @@ im sorry love
       overflow: hidden;
     }
 
-    /* 💗 Floating Hearts Background */
+    /* 💕 Cute floating hearts */
     .hearts {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
+      inset: 0;
       z-index: 0;
+      pointer-events: none;
     }
 
     .heart {
       position: absolute;
-      bottom: -50px;
-      font-size: 18px;
-      color: rgba(217, 76, 125, 0.35);
+      bottom: -40px;
       animation: floatUp linear infinite;
+      opacity: 0;
     }
 
     @keyframes floatUp {
       0% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(0.8);
         opacity: 0;
       }
-      20% { opacity: 0.6; }
-      80% { opacity: 0.4; }
+      20% { opacity: 0.7; }
+      80% { opacity: 0.6; }
       100% {
         transform: translateY(-110vh) scale(1.4);
         opacity: 0;
@@ -55,76 +52,86 @@ im sorry love
     .card {
       position: relative;
       z-index: 2;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(12px);
-      padding: 55px 42px;
-      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(14px);
+      padding: 55px 45px;
+      border-radius: 32px;
       width: 92%;
       max-width: 480px;
-      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.25);
       text-align: center;
-      animation: rise 1.4s ease;
+      animation: popIn 1.3s ease;
     }
 
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     h1 {
-      color: #d94c7d;
+      color: #ff6f91;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      letter-spacing: 0.3px;
     }
 
     .message {
       font-size: 17px;
       color: #333;
       line-height: 1.7;
-      min-height: 130px;
+      min-height: 140px;
       white-space: pre-line;
       transition: opacity 0.5s ease;
     }
 
     .buttons {
-      margin-top: 38px;
+      margin-top: 40px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 16px;
     }
 
     button {
-      padding: 14px;
-      border-radius: 32px;
+      padding: 15px;
+      border-radius: 40px;
       border: none;
       font-size: 15px;
       cursor: pointer;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: all 0.25s ease;
     }
 
     .continue {
-      background: #d94c7d;
+      background: linear-gradient(135deg, #ff6f91, #ff9a9e);
       color: white;
-      box-shadow: 0 12px 28px rgba(217, 76, 125, 0.45);
+      box-shadow: 0 12px 28px rgba(255,111,145,0.45);
     }
 
-    .continue:hover { transform: scale(1.05); }
+    .continue:hover {
+      transform: scale(1.06);
+    }
 
     .forgive {
-      background: transparent;
-      color: #d94c7d;
-      border: 2px solid #d94c7d;
+      background: white;
+      color: #ff6f91;
+      border: 2px solid #ff6f91;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
     }
 
     .forgive:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 22px rgba(217, 76, 125, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 22px rgba(255,111,145,0.35);
     }
 
     .footer {
-      margin-top: 30px;
+      margin-top: 32px;
       font-size: 13px;
-      color: #777;
+      color: #888;
     }
 
     .hidden { display: none; }
@@ -141,16 +148,16 @@ im sorry love
 </head>
 <body>
 
-  <!-- 💗 Hearts -->
+  <!-- 💕 Background hearts -->
   <div class="hearts" id="hearts"></div>
 
-  <!-- 🎹 Music -->
+  <!-- 🎹 Soft sad piano -->
   <audio id="music" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0b6c89c8f2.mp3" type="audio/mpeg">
   </audio>
 
   <div class="card">
-    <h1>Momo</h1>
+    <h1>Momo 🤍</h1>
 
     <div class="message" id="text"></div>
 
@@ -160,38 +167,39 @@ im sorry love
       </button>
 
       <button class="forgive hidden" id="forgiveBtn" onclick="forgiven()">
-        I forgive you 🤍
+        I forgive you 🫶
       </button>
     </div>
 
     <div class="footer">
-      from someone who truly cares about you
+      made with effort, feelings, and honesty
     </div>
   </div>
 
   <script>
-    /* 💗 Generate hearts */
+    /* 💕 Generate cute hearts */
     const heartsContainer = document.getElementById("hearts");
+    const heartEmojis = ["💗","💖","💞","💕","🤍"];
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 30; i++) {
       const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerText = "❤";
+      heart.className = "heart";
+      heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = 8 + Math.random() * 8 + "s";
-      heart.style.fontSize = 14 + Math.random() * 14 + "px";
-      heart.style.animationDelay = Math.random() * 5 + "s";
+      heart.style.fontSize = 14 + Math.random() * 16 + "px";
+      heart.style.animationDuration = 8 + Math.random() * 10 + "s";
+      heart.style.animationDelay = Math.random() * 6 + "s";
       heartsContainer.appendChild(heart);
     }
 
     const messages = [
-      "I didn’t want to send a rushed message or a careless apology.",
-      "I needed you to know that I’ve reflected on my actions.",
-      "I understand how I hurt you, and I take full responsibility.",
-      "You matter to me more than my pride, more than being right.",
-      "I am genuinely sorry, Momo.",
-      "I don’t expect forgiveness or immediate answers.",
-      "I just hope, in time, we can talk and heal this."
+      "Hey Momo…",
+      "I didn’t want to say sorry in a careless way.",
+      "So I made this, hoping you’d feel how much I care.",
+      "I know I hurt you, and I take full responsibility for that.",
+      "You genuinely matter to me — more than my pride.",
+      "I’m really, truly sorry.",
+      "No pressure, no rush… I just hope we can talk when you’re ready."
     ];
 
     let index = 0;
@@ -223,7 +231,7 @@ im sorry love
 
       text.classList.add("fade");
       text.innerText =
-        "Thank you for giving me this chance.\n\nYou don’t have to reply right now.\nTake all the time you need.\n\nI’ll be here — whenever you’re ready.";
+        "Thank you for reading all of this.\n\nYou don’t have to say anything right now.\nJust know that I’m here,\nand I’m not going anywhere. 🤍";
 
       forgiveBtn.classList.add("hidden");
     }
